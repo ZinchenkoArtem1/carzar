@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean isUserExist(User user) {
-        return userRepository.existsByUserEmailAndPassword(user.getUserEmail(), user.getPassword());
+    public User isUserExist(User user) {
+        return userRepository.findByUserEmailAndPassword(user.getUserEmail(), user.getPassword());
     }
 }

@@ -4,5 +4,5 @@ import ua.com.zinchenko.carzar.model.User;
 
 public interface UserService {
 
-    boolean isUserExist(User user);
+    User isUserExist(User user);
 }

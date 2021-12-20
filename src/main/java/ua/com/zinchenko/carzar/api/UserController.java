@@ -3,6 +3,8 @@ package ua.com.zinchenko.carzar.api;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ua.com.zinchenko.carzar.api.dto.UserDto;
+import ua.com.zinchenko.carzar.api.mapper.UserMapper;
 import ua.com.zinchenko.carzar.model.User;
 import ua.com.zinchenko.carzar.service.UserService;
 
@@ -17,10 +19,11 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> userLogin(@RequestBody User user) {
-        if(!userService.isUserExist(user)) {
+    public ResponseEntity<UserDto> userLogin(@RequestBody User user) {
+        User userFromDb = userService.isUserExist(user);
+        if(userFromDb == null) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(UserMapper.modelToDto(userFromDb), HttpStatus.OK);
     }
 }

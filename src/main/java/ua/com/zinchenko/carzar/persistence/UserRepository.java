@@ -7,5 +7,5 @@ import ua.com.zinchenko.carzar.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    boolean existsByUserEmailAndPassword(String userEmail, String password);
+    User findByUserEmailAndPassword(String userEmail, String password);
 }
