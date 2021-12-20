@@ -20,7 +20,7 @@ public class BodyTypeController {
         this.bodyTypeService = bodyTypeService;
     }
 
-    @PostMapping("/carType}")
+    @PostMapping("/cartype")
     public List<BodyTypeDto> getBodyTypesByCarType(@RequestBody CarType carType) {
         return bodyTypeService.getBodyTypesByCarType(carType).stream()
                 .map(BodyTypeMapper::modelToDto)
