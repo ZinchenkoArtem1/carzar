@@ -30,6 +30,12 @@ public class Advertisement {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(name = "color")
+    private String color;
+
+    @Column(name = "mileage")
+    private Integer mileage;
+
     @ManyToOne
     @JoinColumn(name = "car_id")
     private Car car;

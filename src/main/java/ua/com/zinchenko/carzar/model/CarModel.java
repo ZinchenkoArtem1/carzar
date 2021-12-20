@@ -24,13 +24,9 @@ public class CarModel {
     @Column(name = "car_model_name")
     private String name;
 
-    @ManyToMany
-    @JoinTable(
-            name = "car_type_car_model_matchers",
-            joinColumns = { @JoinColumn(name = "car_model_id") },
-            inverseJoinColumns = { @JoinColumn(name = "car_type_id") }
-    )
-    Set<CarType> carTypes = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "car_type_id")
+    private CarType carType;
 
     @OneToMany(mappedBy = "carModel")
     private Set<Car> cars;

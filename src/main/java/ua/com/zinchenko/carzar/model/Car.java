@@ -20,12 +20,6 @@ public class Car {
     @Column(name = "car_id")
     private Integer id;
 
-    @Column(name = "color")
-    private String color;
-
-    @Column(name = "mileage")
-    private Integer mileage;
-
     @OneToMany(mappedBy = "car")
     private Set<Advertisement> advertisementSet;
 

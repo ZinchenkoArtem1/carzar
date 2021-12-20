@@ -27,8 +27,8 @@ public class CarType {
     @OneToMany(mappedBy = "carType")
     private Set<BodyType> bodyTypes;
 
-    @ManyToMany(mappedBy = "carTypes")
-    private Set<CarModel> carModels = new HashSet<>();
+    @OneToMany(mappedBy = "carType")
+    private Set<CarModel> carModels;
 
     @OneToMany(mappedBy = "carType")
     private Set<Car> cars;
