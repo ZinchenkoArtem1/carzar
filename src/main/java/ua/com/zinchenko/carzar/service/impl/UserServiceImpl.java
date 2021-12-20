@@ -18,4 +18,9 @@ public class UserServiceImpl implements UserService {
     public User isUserExist(User user) {
         return userRepository.findByUserEmailAndPassword(user.getUserEmail(), user.getPassword());
     }
+
+    @Override
+    public User getById(Integer id) {
+        return userRepository.getById(id);
+    }
 }

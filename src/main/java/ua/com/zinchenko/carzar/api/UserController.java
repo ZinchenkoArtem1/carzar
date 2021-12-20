@@ -26,4 +26,9 @@ public class UserController {
         }
         return new ResponseEntity<>(UserMapper.modelToDto(userFromDb), HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")
+    public UserDto getUserInfo(@PathVariable Integer id) {
+        return UserMapper.modelToDto(userService.getById(id));
+    }
 }
