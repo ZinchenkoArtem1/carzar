@@ -18,6 +18,7 @@ public class Car {
 
     @Id
     @Column(name = "car_id")
+    @GeneratedValue
     private Integer id;
 
     @OneToMany(mappedBy = "car")

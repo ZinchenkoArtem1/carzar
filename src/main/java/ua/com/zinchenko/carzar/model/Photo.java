@@ -17,6 +17,7 @@ public class Photo {
 
     @Id
     @Column(name = "photo_id")
+    @GeneratedValue
     private Integer id;
 
     @Column(name = "photo_name")

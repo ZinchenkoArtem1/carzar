@@ -18,6 +18,7 @@ public class BodyType {
 
     @Id
     @Column(name = "body_type_id")
+    @GeneratedValue
     private Integer id;
 
     @Column(name = "body_type_name")

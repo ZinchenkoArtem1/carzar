@@ -19,6 +19,7 @@ public class Role {
 
     @Id
     @Column(name = "role_id")
+    @GeneratedValue
     private Integer id;
 
     @Column(name = "role_name")

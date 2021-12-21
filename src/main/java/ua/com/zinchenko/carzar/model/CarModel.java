@@ -19,6 +19,7 @@ public class CarModel {
 
     @Id
     @Column(name = "car_model_id")
+    @GeneratedValue
     private Integer id;
 
     @Column(name = "car_model_name")

@@ -19,6 +19,7 @@ public class User {
 
     @Id
     @Column(name = "user_id")
+    @GeneratedValue
     private Integer id;
 
     @Column(name = "user_first_name")

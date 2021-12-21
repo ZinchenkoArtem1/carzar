@@ -18,6 +18,7 @@ public class Advertisement {
 
     @Id
     @Column(name = "advertisement_id")
+    @GeneratedValue
     private Integer id;
 
     @Column(name = "advertisement_description")
