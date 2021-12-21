@@ -35,4 +35,9 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     public List<Advertisement> getAll() {
         return advertisementRepository.findAll();
     }
+
+    @Override
+    public List<Advertisement> getByUserId(Integer userId) {
+        return advertisementRepository.findAllByUserId(userId);
+    }
 }

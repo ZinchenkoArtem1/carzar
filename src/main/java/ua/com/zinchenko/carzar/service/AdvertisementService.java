@@ -10,4 +10,5 @@ public interface AdvertisementService {
     void removeAdvertisement(Advertisement advertisement);
     Advertisement getById(Integer id);
     List<Advertisement> getAll();
+    List<Advertisement> getByUserId(Integer userId);
 }

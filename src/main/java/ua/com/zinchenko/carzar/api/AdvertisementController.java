@@ -40,4 +40,11 @@ public class AdvertisementController {
     public void deleteAdvertisement(@RequestBody Advertisement advertisement) {
         advertisementService.removeAdvertisement(advertisement);
     }
+
+    @GetMapping("/user/{userId}")
+    public List<AdvertisementDto> getAdvertisementsByUserId(@PathVariable Integer userId) {
+        return advertisementService.getByUserId(userId).stream()
+                .map(AdvertisementMapper::modelToDto)
+                .collect(Collectors.toList());
+    }
 }
