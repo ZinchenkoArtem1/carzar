@@ -18,7 +18,7 @@ public class Car {
 
     @Id
     @Column(name = "car_id")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @OneToMany(mappedBy = "car")

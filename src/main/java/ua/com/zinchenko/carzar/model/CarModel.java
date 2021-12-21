@@ -19,7 +19,7 @@ public class CarModel {
 
     @Id
     @Column(name = "car_model_id")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "car_model_name")

@@ -18,7 +18,7 @@ public class BodyType {
 
     @Id
     @Column(name = "body_type_id")
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "body_type_name")
