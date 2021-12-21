@@ -22,7 +22,7 @@ public class CarController {
     }
 
     @PostMapping("/carmodel/bodytype")
-    public CarDto getCarByModelAndBody(@RequestBody CarModel carModel, @RequestBody BodyType bodyType) {
-        return CarMapper.modelToDto(carService.getCar(carModel, bodyType));
+    public CarDto getCarByModelAndBody(@RequestBody Car car) {
+        return CarMapper.modelToDto(carService.getCar(car.getCarModel(), car.getBodyType()));
     }
 }
